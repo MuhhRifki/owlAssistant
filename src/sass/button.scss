@@ -31,7 +31,7 @@
     @extend ._bt;
     background-color: $_main;
     &:hover {
-        background-color: $_hmain;
+        background-color: $hx_silver;
     }
 }
 
@@ -72,6 +72,15 @@
     @extend ._bt3m;
     font-size: 1em;
     padding: 5px 0px;
+}
+
+._bt5m3w {
+    // main color, medium button 
+    @extend ._bt3m;
+    font-size: 1em;
+    padding: 5px 0px;
+    color: $hx-fuchsia;
+    background-color: $_white;
 }
 
 ._bt5m3g {

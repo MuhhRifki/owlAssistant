@@ -429,6 +429,11 @@
     color: $_blue;
 }
 
+._ct3w {
+    @extend ._ct;
+    color: $_white;
+}
+
 ._ct3x {
     // xsmall black
     @extend ._ct;
@@ -453,6 +458,12 @@
     // xsmall blue
     @extend ._ct;
     color: $_blue;
+    font-size: .8em;
+}
+
+._ct3xw {
+    @extend ._ct;
+    color: $_white;
     font-size: .8em;
 }
 
@@ -481,6 +492,13 @@
     // medium blue
     @extend ._ct;
     color: $_blue;
+    font-size: 1em;
+}
+
+._ct3mw {
+    // medium white
+    @extend ._ct;
+    color: $_white;
     font-size: 1em;
 }
 

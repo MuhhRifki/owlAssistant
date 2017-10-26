@@ -1,0 +1,6 @@
+@mixin fill-available() {
+    height: -webkit-fill-available;
+    height: -moz-fill-available;
+    height: -ms-fill-available;
+    height: fill-available;
+}

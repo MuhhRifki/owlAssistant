@@ -1,66 +1,88 @@
 @import 'variable';
 // Image
-._i3so{ // soft rectangle
+._i3so {
+    // soft rectangle
     border-radius: 5px;
 }
-._i3ci{ // circle image
+
+._i3ci {
+    // circle image
     border-radius: 50%;
 }
 
-._i{ // image, sharp, full 100%, left
+._i {
+    // image, sharp, full 100%, left
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 25px;
 }
-._i3c{ // image, sharp, full 100%, center
+
+._i3c {
+    // image, sharp, full 100%, center
     width: 100%;
     padding: 0;
     margin-left: auto;
     margin-right: auto;
 }
-._i3x{ // image, sharp, xsmall, left
+
+._i3x {
+    // image, sharp, xsmall, left
     @extend ._i;
     width: 10px;
-    height: 30px;
+    height: 40px;
 }
-._i3xc{ // image, sharp, xsmall, center
+
+._i3xc {
+    // image, sharp, xsmall, center
     @extend ._i3c;
     width: 10px;
-    height: 30px;
+    height: 40px;
 }
-._i3s{ // image, sharp, small, left
+
+._i3s {
+    // image, sharp, small, left
     @extend ._i;
     width: 20px;
     height: 20px;
 }
-._i3sc{ // image, sharp, small, center
+
+._i3sc {
+    // image, sharp, small, center
     @extend ._i3c;
     width: 20px;
     height: 20px;
 }
 
-._i3m{ // image, sharp, medium left
+._i3m {
+    // image, sharp, medium left
     @extend ._i;
     width: 25px;
     height: 25px;
 }
-._i3mc{ // image, sharp, medium, center
+
+._i3mc {
+    // image, sharp, medium, center
     @extend ._i3c;
     width: 25px;
     height: 25px;
 }
 
-._i3l{ // image, sharp, large, left
+._i3l {
+    // image, sharp, large, left
     @extend ._i;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
-._i3lc{ // image, sharp, large, center
+
+._i3lc {
+    // image, sharp, large, center
     @extend ._i3c;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
-._i3pr{ // image for profil
+
+._i3pr {
+    // image for profil
     width: 50px;
     height: 50px;
     border: 1px solid $_blue;

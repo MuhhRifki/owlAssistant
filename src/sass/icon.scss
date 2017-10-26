@@ -1,122 +1,12 @@
 @import 'variable';
-._ic {
-    // small, black
-    font-size: 1em;
-    color: $hx-black;
-}
-
-._ic3s {
-    // small, silver
-    font-size: 1em;
-    color: $hx-silver;
-}
-
-._ic3m {
-    // small, main
-    font-size: 1em;
-    color: $_main;
-}
-
-._ic3b {
-    // small, blue
-    font-size: 1em;
-    color: $_blue;
-}
-
-._ic3r {
-    // small, red
-    font-size: 1em;
-    color: $hx-red;
-}
-
-._icx {
-    // xsmall, black
-    font-size: .9em;
-}
-
-._ic3xs {
-    // xsmall, silver
-    font-size: .9em;
-    color: $hx-silver;
-}
-
-._ic3xm {
-    // xsmall main
-    font-size: .9em;
-    color: $_main;
-}
-
-._ic3xb {
-    // xsmall blue
-    font-size: .9em;
-    color: $_blue;
-}
-
-._ic3xr {
-    // xsmall red
-    font-size: .9em;
-    color: $hx-red;
-}
-
-._ic3m {
-    // medium, black
-    font-size: 1.5;
-}
-
-._ic3ms {
-    // medium, silver
-    font-size: 1.5;
-    color: $hx-silver;
-}
-
-._ic3mm {
-    // medium, main
-    font-size: 1.5em;
-    color: $_main;
-}
-
-._ic3mb {
-    // medium, blue
-    font-size: 1.5;
-    color: $_blue;
-}
-
-._ic3mr {
-    // medium, red
-    font-size: 1.5;
-    color: $hx-red;
-}
-
 ._ic3l {
-    // large, black
-    font-size: 3.125em;
+    font-size: 2em;
+    margin-left: 0px;
+    margin-top: 25px;
+    display: inline-block;
 }
 
-._ic3ls {
-    // large, silver
-    font-size: 3.125em;
-    color: $hx-silver;
-}
-
-._ic3lm {
-    // large, main
-    font-size: 3.125em;
-    color: $_main;
-}
-
-._ic3lb {
-    // large, blue
-    font-size: 3.125em;
-    color: $_blue;
-}
-
-._ic3lr {
-    // large, red
-    font-size: 3.125em;
-    color: $hx-red;
-}
-
-._i3a {
-    // active
-    color: $hx-green;
+._ic3l5w {
+    @extend ._ic3l;
+    color: $_white;
 }

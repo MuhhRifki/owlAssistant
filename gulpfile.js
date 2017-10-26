@@ -10,7 +10,7 @@ var err = 'error',
     paths = {
         // Source
         srcHTML: './src/html/*.html',
-        srcSASS: './src/sass/*.scss',
+        srcSASS: './src/sass/main.scss',
         srcJS: './src/js/*.js',
         srcImg: './src/img/**/*.+(png|jpg|gif|svg)',
 
@@ -72,7 +72,7 @@ gulp.task('inject', ['task'], () => {
 gulp.task('serve', ['inject'], () => {
     return gulp.src('./dev/')
         .pipe(webserver({
-            port: 3000,
+            port: 3002,
             host: '0.0.0.0',
             livereload: true
         }))

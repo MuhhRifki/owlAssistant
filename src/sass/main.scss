@@ -137,7 +137,6 @@ input[type="checkbox"] {
     font-family: $PT-sans;
     font-size: 2.2em;
     color: $_white;
-    text-align: left;
     border: none;
     font-weight: lighter;
     margin: 0px;
@@ -200,7 +199,11 @@ input[type="checkbox"] {
 }
 
 ._f5c {
-    background-color: $_main;
+    background: $_main;
+    background: -webkit-linear-gradient(45deg, $_main, $_hmain);
+    background: -moz-linear-gradient(45deg, $_main, $_hmain);
+    background: -o-linear-gradient(45deg, $_main, $_hmain);
+    background: linear-gradient(45deg, $_main, $_hmain);
 }
 
 //Navbar 
@@ -212,8 +215,8 @@ input[type="checkbox"] {
     top: 0;
     height: 100%;
     z-index: 10;
-    transition: left 0.3s;
     -webkit-transition: left 0.3s;
+    transition: left 0.3s;
     background-color: $_white;
     /* Safari and Chrome */
     li {
@@ -279,7 +282,7 @@ input[type="checkbox"] {
     text-overflow: ellipsis;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 601px) {
     //padding
     ._pdx3n {
         padding-left: 0;
@@ -305,11 +308,11 @@ input[type="checkbox"] {
     ._ch3a,
     ._ch3a,
     ._ch {
-        max-width: 70%;
+        max-width: 80%;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 601px) {
     ._f5a {
         ._bl5d {
             height: auto;
@@ -319,7 +322,7 @@ input[type="checkbox"] {
     ._ch3a,
     ._ch3a,
     ._ch {
-        max-width: 50%;
+        max-width: 60%;
     }
 }
 
@@ -359,22 +362,24 @@ input[type="checkbox"] {
 ._ch5w {
     width: 100%;
     height: auto;
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    overflow-y: hidden;
 }
 
 ._ch3c {
     width: auto;
-    padding: 10px 0px 0px 0px;
+    padding: 0 0 0 0;
     margin: 10px 10px 10px 0px;
     border: 1px solid $hx_gray;
     border-radius: 10px;
     background-color: $_white;
     list-style-type: none;
     text-align: left;
+    overflow: hidden;
+    min-width: 175px;
+    max-width: 225px;
     li {
         padding: 10px 10px 10px 10px;
         border-bottom: 1px solid $hx-silver;
@@ -393,20 +398,20 @@ input[type="checkbox"] {
     border: 1px solid $hx_silver;
     border-radius: 10px;
     background-color: $_white;
-    h4 {
-        margin: 0px 0px 0px 0px;
-        padding-left: 10px;
-        padding-top: 5px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+    overflow: hidden;
+    &>header {
+        margin: 0;
+        padding: 10px;
         background-color: $hx_silver;
-        color: $_white;
-        height: 30px;
-        font-size: 1em;
-        font-weight: bold;
+        h4 {
+            margin: 0;
+            color: $_white;
+            font-size: 1em;
+            font-weight: bold;
+        }
     }
     span {
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
         border-bottom: 1px solid $hx-silver;
         &:last-child {
             border-bottom: none;
@@ -421,21 +426,24 @@ input[type="checkbox"] {
     background-color: $_main;
     list-style-type: none;
     text-align: left;
-    max-width: 40%;
+    max-width: 90%;
     tr {
+        @extend ._w3wr;
         color: $_white;
         &:last-child {
             border-bottom: none;
         }
     }
     td {
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
         border-bottom: 1px solid $_white;
         font-size: 1.2em;
         &:last-child {
+            text-align: center;
             font-size: 2.2em;
             font-weight: bold;
-            width: 30%;
+            width: auto;
+            white-space: nowrap;
         }
     }
 }
@@ -444,6 +452,8 @@ input[type="checkbox"] {
 ._ch3f {
     padding: 0px 10px 0px 10px;
     margin: 10px 10px 10px 0px;
+    flex: 0 0 auto;
+    max-width: 150px;
     border-radius: 10px;
     background-color: $hx_silver;
     list-style-type: none;
@@ -481,12 +491,13 @@ input[type="checkbox"] {
 
 // assignment
 ._ch3g {
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     margin: 10px 10px 0px 0px;
     border-radius: 10px;
     background-color: $hx_silver;
     list-style-type: none;
     text-align: left;
+    overflow: hidden;
     h3 {
         padding: 5px 0px 0px 0px;
         margin-bottom: 0px;
@@ -495,8 +506,6 @@ input[type="checkbox"] {
         color: $_white;
         text-align: center;
         font-size: 1em;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
     }
     h4 {
         padding: 0px 10px 0px 10px;
@@ -536,16 +545,35 @@ input[type="checkbox"] {
         padding: 0;
         position: relative;
         max-height: 100px;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        -ms-word-wrap: break-word;
-        word-break: break-word;
-        -ms-word-break: break-word;
-        user-select: text;
-        -webkit-user-select: text;
-        -moz-user-select: text;
-        -ms-user-select: text;
         border: none;
         outline: none;
+        @extend ._w3wr;
+    }
+}
+
+._w3wr {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+._ch3cnt {
+    order: 1;
+    position: relative;
+    overflow-y: auto;
+    @extend ._w3wr;
+}
+
+._ch3pn {
+    flex: 0 0 auto;
+    &._emt {
+        display: flex;
+        display: -webkit-flex;
+        flex: 1 1 auto;
     }
 }

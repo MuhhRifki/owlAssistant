@@ -10,3 +10,13 @@
     @extend ._ic3l;
     color: $_white;
 }
+
+._ic3lm {
+    @extend ._ic3l;
+    margin-top: 0px;
+    color: $_main;
+    position: absolute;
+    right: 35px;
+    top: 40%;
+    padding-right: 5px;
+}

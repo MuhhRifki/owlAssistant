@@ -1,0 +1,131 @@
+@import 'variable';
+._chat {
+    width: 490px;
+    float: left;
+    background: $_1grey;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: $hx-purple;
+    ._chat-header {
+        padding: 20px;
+        border-bottom: 2px solid $hx-white;
+        img {
+            float: left;
+        }
+        ._chat-about {
+            float: left;
+            padding-left: 10px;
+            margin-top: 6px;
+        }
+        ._chat-with {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        ._chat-num-messages {
+            color: $gray;
+        }
+    }
+    ._chat-history {
+        padding: 30px 30px 20px;
+        border-bottom: 2px solid $hx-white;
+        overflow-y: scroll;
+        height: 575px;
+        ._message-data {
+            margin-bottom: 15px;
+        }
+        ._message-data-time {
+            color: lighten($gray, 8%);
+            padding-left: 6px;
+        }
+        ._message {
+            color: $hx-white;
+            padding: 18px 20px;
+            line-height: 26px;
+            font-size: 16px;
+            border-radius: 7px;
+            margin-bottom: 30px;
+            width: 90%;
+            position: relative;
+            &:after {
+                bottom: 100%;
+                left: 7%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-bottom-color: $rgb-green;
+                border-width: 10px;
+                margin-left: -10px;
+            }
+        }
+        ._my-message {
+            background: $rgb-green;
+        }
+        ._other-message {
+            background: $_main;
+            &:after {
+                border-bottom-color: $_main;
+                left: 93%;
+            }
+        }
+    }
+    ._chat-message {
+        padding: 30px;
+        textarea {
+            width: 100%;
+            border: none;
+            padding: 10px 20px;
+            font-family: $PT-sans;
+            font-size: 14px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            resize: none;
+        }
+        .fa-file-o,
+        .fa-file-image-o {
+            font-size: 16px;
+            color: gray;
+            cursor: pointer;
+        }
+        button {
+            float: right;
+            color: $_main;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            background: $_1grey;
+            &:hover {
+                color: darken($_main, 7%);
+            }
+        }
+    }
+}
+
+._me {
+    color: $blue;
+}
+
+._align-left {
+    text-align: left;
+}
+
+._align-right {
+    text-align: right;
+}
+
+._float-right {
+    float: right;
+}
+
+._clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}

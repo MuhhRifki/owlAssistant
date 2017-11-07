@@ -6,6 +6,11 @@
 @import 'table';
 @import 'mixin';
 @import 'icon';
+._fx {
+    position: fixed;
+    max-height: 100%;
+}
+
 select,
 input[type="text"],
 input[type="password"] {
@@ -48,16 +53,19 @@ textarea {
 }
 
 ._txa3m {
-    @extend textarea;
-    height: 130px;
-    max-height: 130px;
-    border-top: 1px solid;
-    border-top-color: $hx_purple;
+    @extend ._txa3l;
+    background-color: $_white !important;
+    margin-top: 15px;
+    padding: 15px 15px 15px 15px;
+    height: 120px;
+    border: 2px solid !important;
+    border-color: $_main !important;
+    border-radius: 10px;
 }
 
 ._txa3l {
     @extend textarea;
-    height: 420px;
+    height: 50px;
     resize: vertical;
     overflow: auto;
 }
@@ -122,10 +130,10 @@ input[type="checkbox"] {
 
 // ChatBox
 ._cb {
-    @extend ._ov3y5l;
-    padding: 15px 5px 15px 5px;
-    height: 400px;
     background-color: $_white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 485px;
 }
 
 // Typography
@@ -160,8 +168,9 @@ input[type="checkbox"] {
 
 ._he3s {
     @extend ._he;
+    padding-top: 5px;
     font-size: .9em;
-    color: $hx-black;
+    color: $hx-silver;
 }
 
 ._he3s5r {
@@ -298,6 +307,11 @@ input[type="checkbox"] {
             padding-top: 180px;
         }
     }
+    ._ch3a,
+    ._ch3a,
+    ._ch {
+        max-width: 70%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -306,5 +320,211 @@ input[type="checkbox"] {
             height: auto;
             margin-top: 220px;
         }
+    }
+    ._ch3a,
+    ._ch3a,
+    ._ch {
+        max-width: 50%;
+    }
+}
+
+//chat
+._ch {
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 7px;
+    ._he3sb {
+        color: $_white;
+    }
+    ._he3s {
+        font-size: 1em;
+        color: $_white;
+    }
+}
+
+._ch3ms {
+    background-color: $_1grey;
+}
+
+._ch3a {
+    @extend ._ch;
+    margin-left: 0px;
+    margin-right: 50px;
+    background-color: $hx_silver;
+}
+
+._ch3b {
+    @extend ._ch;
+    margin-left: 50px;
+    margin-right: 0px;
+    background-color: $_main;
+}
+
+//chat assistant
+._ch5w {
+    width: 100%;
+    height: auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+._ch3c {
+    width: auto;
+    padding: 10px 0px 0px 0px;
+    margin: 10px 10px 10px 0px;
+    border: 1px solid $hx_gray;
+    border-radius: 10px;
+    background-color: $_white;
+    list-style-type: none;
+    text-align: left;
+    li {
+        padding: 10px 10px 10px 10px;
+        border-bottom: 1px solid $hx-silver;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// chat info
+._ch3d {
+    padding: 0px;
+    border: 1px solid $hx_silver;
+    border-radius: 10px;
+    background-color: $_white;
+    h4 {
+        margin: 0px 0px 0px 0px;
+        padding-left: 10px;
+        padding-top: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: $hx_silver;
+        color: $_white;
+        height: 30px;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    span {
+        padding: 10px 10px 10px 10px;
+        border-bottom: 1px solid $hx-silver;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// grade
+._ch3e {
+    padding: 0px;
+    border-radius: 10px;
+    background-color: $_main;
+    list-style-type: none;
+    text-align: left;
+    max-width: 40%;
+    tr {
+        color: $_white;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    td {
+        padding: 10px 10px 10px 10px;
+        border-bottom: 1px solid $_white;
+        font-size: 1.2em;
+        &:last-child {
+            font-size: 2.2em;
+            font-weight: bold;
+            width: 30%;
+        }
+    }
+}
+
+// schedule
+._ch3f {
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    background-color: $hx_silver;
+    list-style-type: none;
+    text-align: left;
+    h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        color: $_main;
+    }
+    h5 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: $_white;
+    }
+    h6 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        color: $_white;
+    }
+    @media (min-width: 992px) {
+        h4 {
+            font-size: 2em;
+        }
+        h5 {
+            font-size: 1.3em;
+        }
+        h6 {
+            font-size: 1.1em;
+        }
+    }
+}
+
+// assignment
+._ch3g {
+    padding: 0px 0px 0px 0px;
+    margin: 10px 10px 0px 0px;
+    border-radius: 10px;
+    background-color: $hx_silver;
+    list-style-type: none;
+    text-align: left;
+    h3 {
+        padding: 5px 0px 0px 0px;
+        margin-bottom: 0px;
+        height: 30px;
+        background-color: $_main;
+        color: $_white;
+        text-align: center;
+        font-size: 1em;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    h4 {
+        padding: 0px 10px 0px 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $_white;
+        font-size: 1.1em;
+        font-weight: normal;
+    }
+    h5 {
+        padding: 0px 10px 0px 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $_white;
+        font-size: 1em;
+        font-weight: normal;
+    }
+    h6 {
+        padding: 0px 10px 0px 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $_white;
+        font-size: 0.8em;
+        font-weight: normal;
     }
 }

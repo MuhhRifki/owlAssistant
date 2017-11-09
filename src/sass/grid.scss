@@ -110,6 +110,7 @@ textarea {
     color: inherit;
     font: inherit;
     margin: 0;
+    outline: none;
 }
 
 button {
@@ -119,6 +120,11 @@ button {
 
 select {
     text-transform: none;
+}
+
+div#root {
+    height: 100%;
+    width: 100%;
 }
 
 button,
@@ -322,8 +328,8 @@ hr {
 {
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 ._c5x31,
@@ -859,6 +865,14 @@ hr {
 
 .show {
     display: block !important;
+}
+
+.inline {
+    display: inline !important;
+}
+
+._w100 {
+    width: 100%;
 }
 
 .invisible {

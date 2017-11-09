@@ -13,6 +13,7 @@
 
 select,
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     background-color: transparent !important;
     box-sizing: border-box;
@@ -41,6 +42,7 @@ input[type="password"] {
 select:focus,
 input[type="checkbox"]:focus,
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
     border-bottom: 5px solid rgba($rgb-white, 1);
 }
@@ -71,7 +73,6 @@ textarea {
 }
 
 ._cn input[type="password"] {
-    margin-bottom: 24px;
     padding-right: 36px;
 }
 
@@ -112,16 +113,12 @@ input[type="checkbox"] {
         right: 15px;
         color: $_white;
         font-weight: normal;
+        font-size: 1.2em;
         cursor: pointer;
+        &:hover {
+            color: $_2grey;
+        }
     }
-}
-
-._cn3l {
-    @extend ._cn;
-}
-
-._cn3r {
-    @extend ._cn;
 }
 
 // ChatBox
@@ -253,6 +250,10 @@ input[type="checkbox"] {
     ._n {
         left: 0;
     }
+    // &+.overlay {
+    //     visibility: visible;
+    //     opacity: 0.7;
+    // }
 }
 
 ._se {
@@ -305,7 +306,12 @@ input[type="checkbox"] {
             padding-top: 180px;
         }
     }
-    ._ch3a,
+    ._f5c {
+        ._bl5d {
+            margin: auto;
+            max-width: 500px;
+        }
+    }
     ._ch3a,
     ._ch {
         max-width: 80%;
@@ -319,7 +325,12 @@ input[type="checkbox"] {
             margin-top: 220px;
         }
     }
-    ._ch3a,
+    ._f5c {
+        ._bl5d {
+            margin: auto;
+            max-width: 500px;
+        }
+    }
     ._ch3a,
     ._ch {
         max-width: 60%;
@@ -328,8 +339,8 @@ input[type="checkbox"] {
 
 //chat
 ._ch {
-    padding: 10px 10px 10px 10px;
-    margin: 5px 5px 5px 5px;
+    padding: 10px;
+    margin: 5px;
     border-radius: 7px;
     ._he3sb {
         color: $_white;
@@ -359,19 +370,27 @@ input[type="checkbox"] {
 }
 
 //chat assistant
-._ch5w {
+div._ch5w {
     width: 100%;
     height: auto;
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    -webkit-padding-start: 20px;
+    margin-bottom: 5px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &:first-child {
+        margin-left: 20px;
+    }
 }
 
 ._ch3c {
     width: auto;
     padding: 0 0 0 0;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 0 0;
     border: 1px solid $hx_gray;
     border-radius: 10px;
     background-color: $_white;
@@ -380,14 +399,18 @@ input[type="checkbox"] {
     overflow: hidden;
     min-width: 175px;
     max-width: 225px;
-    li {
-        padding: 10px 10px 10px 10px;
-        border-bottom: 1px solid $hx-silver;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        &:last-child {
-            border-bottom: none;
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 10px 10px 10px 10px;
+            border-bottom: 1px solid $hx-silver;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:last-child {
+                border-bottom: none;
+            }
         }
     }
 }
@@ -427,6 +450,7 @@ input[type="checkbox"] {
     list-style-type: none;
     text-align: left;
     max-width: 90%;
+    margin: 0;
     tr {
         @extend ._w3wr;
         color: $_white;
@@ -451,39 +475,46 @@ input[type="checkbox"] {
 // schedule
 ._ch3f {
     padding: 0px 10px 0px 10px;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 0px 0px;
     flex: 0 0 auto;
     max-width: 150px;
     border-radius: 10px;
     background-color: $hx_silver;
     list-style-type: none;
     text-align: left;
-    h4 {
+    h3 {
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
         font-size: 1.2em;
         color: $_main;
     }
-    h5 {
+    h4 {
         margin-top: 10px;
         margin-bottom: 10px;
         font-size: 1em;
         color: $_white;
     }
-    h6 {
-        margin-top: 10px;
+    h5 {
+        margin-top: 0;
         margin-bottom: 10px;
         font-size: 0.8em;
         color: $_white;
     }
+    h6 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        color: $_white;
+        font-weight: 100;
+    }
     @media (min-width: 992px) {
-        h4 {
+        h3 {
             font-size: 2em;
         }
-        h5 {
+        h4 {
             font-size: 1.3em;
         }
-        h6 {
+        h5 {
             font-size: 1.1em;
         }
     }
@@ -538,7 +569,9 @@ input[type="checkbox"] {
     border-color: $_2grey;
     border-style: solid none none none;
     border-width: 2px;
-    padding: 20px;
+    padding: 15px 20px;
+    font-family: $PT-sans;
+    font-size: 1.2em;
     ._ch3m {
         width: 100%;
         overflow-y: auto;
@@ -556,10 +589,10 @@ input[type="checkbox"] {
     word-wrap: break-word;
     -ms-word-break: break-word;
     word-break: break-word;
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ._ch3cnt {
@@ -577,3 +610,40 @@ input[type="checkbox"] {
         flex: 1 1 auto;
     }
 }
+
+._sd5ft {
+    text-align: center;
+    padding: 10px 0;
+    border-style: solid none;
+    border-width: 1px;
+    border-color: $hx-silver;
+    color: $hx-silver;
+}
+
+#__ch3sb:active {
+    opacity: 0.6;
+}
+
+._mx3s {
+    max-width: 30%;
+}
+
+// .overlay {
+//     visibility: hidden;
+//     background-color: black;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     position: fixed;
+//     z-index: 1;
+//     opacity: 0.0;
+//     -webkit-transition: opacity 0.3s, visibility 0.3s;
+//     -webkit-transition-delay: 0.3s;
+//     -moz-transition: opacity 0.3s, visibility 0.3s;
+//     -moz-transition-delay: 0.3s;
+//     -o-transition: opacity 0.3s, visibility 0.3s;
+//     -o-transition-delay: 0.3s;
+//     transition: opacity 0.3s, visibility 0.3s;
+//     transition-delay: 0.3s;
+// }

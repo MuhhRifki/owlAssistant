@@ -3,35 +3,27 @@
 const gulp = require('gulp'),
     inject = require('gulp-inject'),
     webserver = require('gulp-webserver'),
-    sass = require('gulp-sass'),
-    imagemin = require('gulp-imagemin')
+    sass = require('gulp-sass')
 
-var err = 'error',
+const err = 'error',
     paths = {
         // Source
         srcHTML: './src/html/*.html',
         srcSASS: './src/sass/main.scss',
-        srcJS: './src/js/*.js',
         srcImg: './src/img/**/*.+(png|jpg|gif|svg)',
 
         // Development
         dev: './dev',
         devCss: './dev/css',
-        devJs: './dev/js',
         devImg: './dev/img',
         devHTML: './dev',
-
-        // Production 
-        // dist:       './dist',
-        // distIndex:  './dist/index.html',
-        // distCSS:    './dist/**/*.css',
-        // distJS:     './dist/**/*.js',
+        
     },
     task = {
         html: 'html',
         sass: 'sass',
-        js: 'js',
-        img: 'img'
+        img: 'img',
+        min: 'min'
     }
 
 // HTML task
@@ -40,7 +32,6 @@ gulp.task(task.html, () => {
         .pipe(gulp.dest(paths.devHTML))
 })
 
-
 // SASS
 gulp.task(task.sass, () => {
     return gulp.src(paths.srcSASS)
@@ -48,22 +39,14 @@ gulp.task(task.sass, () => {
         .pipe(gulp.dest(paths.devCss))
 })
 
-// JS
-gulp.task(task.js, () => {
-    return gulp.src(paths.srcJS).
-    pipe(gulp.dest(paths.devJs))
-})
-
 // IMG
 gulp.task(task.img, () => {
     return gulp.src(paths.srcImg)
-        .pipe(imagemin())
         .pipe(gulp.dest(paths.devImg))
 })
 
 gulp.task('inject', ['task'], () => {
-    let css = gulp.src([paths.devCss + '/*.css', paths.devJs + '/*.js'], { read: false })
-
+    let css = gulp.src([paths.devCss + '/*.css'], { read: false })
     return gulp.src(paths.devHTML + '/*.html')
         .pipe(inject(css, { ignorePath: 'dev', addRootSlash: false }))
         .pipe(gulp.dest(paths.dev))
@@ -84,4 +67,4 @@ gulp.task('watch', ['serve'], () => {
 
 gulp.task('default', ['watch'])
 
-gulp.task('task', [task.html, task.js, task.sass, task.img])
+gulp.task('task', [task.html, task.sass, task.img])

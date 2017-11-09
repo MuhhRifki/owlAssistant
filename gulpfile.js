@@ -22,8 +22,7 @@ const err = 'error',
     task = {
         html: 'html',
         sass: 'sass',
-        img: 'img',
-        min: 'min'
+        img: 'img'
     }
 
 // HTML task

@@ -3,7 +3,7 @@
 ._bt {
     font-family: $helvetica;
     background-color: $hx-silver; // default
-    font-weight: 100; // default weight
+    font-weight: normal; // default weight
     font-size: .8em; // default font size
     color: $hx-white;
     width: 100%;
@@ -13,7 +13,7 @@
     margin-top: 12px;
     margin-bottom: 12px;
     &:hover {
-        background-color: $hhx-silver;
+        background-color: $_2grey;
     }
 }
 
@@ -31,7 +31,7 @@
     @extend ._bt;
     background-color: $_main;
     &:hover {
-        background-color: $hx_silver;
+        background-color: $_1grey;
     }
 }
 
@@ -79,7 +79,7 @@
     @extend ._bt3m;
     font-size: 1em;
     padding: 5px 0px;
-    color: $hx-fuchsia;
+    color: $_main;
     background-color: $_white;
 }
 

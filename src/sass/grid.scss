@@ -1,6 +1,7 @@
 @import 'variable.scss';
 html {
     font-family: $sans-serif;
+    height: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -109,6 +110,7 @@ textarea {
     color: inherit;
     font: inherit;
     margin: 0;
+    outline: none;
 }
 
 button {
@@ -118,6 +120,11 @@ button {
 
 select {
     text-transform: none;
+}
+
+div#root {
+    height: 100%;
+    width: 100%;
 }
 
 button,
@@ -288,12 +295,6 @@ hr {
     padding: 0;
 }
 
-@media (min-width: 992px) {
-    ._cn {
-        width: 100%;
-    }
-}
-
 ._ro {
     margin-left: 0px;
     margin-right: 0px;
@@ -327,8 +328,8 @@ hr {
 {
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 ._c5x31,
@@ -599,7 +600,7 @@ hr {
     margin-left: 0%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 601px) {
     ._c5m31,
     ._c5m32,
     ._c5m33,
@@ -815,10 +816,19 @@ hr {
 }
 
 ._cn {
-    &:before,
-    &:after {
-        content: " ";
-        display: table;
+    display: flex;
+    display: -webkit-flex;
+    height: 100%;
+    width: 100%;
+    &._cn3cl {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+    &.center {
+        align-items: center;
+    }
+    &.flex-end {
+        align-items: flex-end;
     }
 }
 
@@ -855,6 +865,14 @@ hr {
 
 .show {
     display: block !important;
+}
+
+.inline {
+    display: inline !important;
+}
+
+._w100 {
+    width: 100%;
 }
 
 .invisible {

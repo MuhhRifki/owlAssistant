@@ -370,6 +370,12 @@ input[type="checkbox"] {
     }
 }
 
+._ch3a5b {
+    @extend ._ch3a;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
 ._ch3b {
     @extend ._ch;
     margin-left: 50px;

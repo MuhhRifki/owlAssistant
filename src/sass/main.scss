@@ -373,7 +373,9 @@ input[type="checkbox"] {
 ._ch3a5b {
     @extend ._ch3a;
     margin-right: 5px;
+    border-radius: 50px;
     white-space: nowrap;
+    box-shadow: 1px 1px 4px 1px rgba(42, 43, 43, 0.075);
 }
 
 ._ch3b {
